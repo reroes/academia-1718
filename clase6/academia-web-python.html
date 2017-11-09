@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);body{padding:20px;color:#8e8071;font-size:15px;font-family:"Open Sans",AppleSDGothicNeo-Medium,"Segoe UI","Malgun Gothic",sans-serif;background:#fff;-webkit-font-smoothing:antialiased}a{color:#3269a0}a:hover{color:#4183c4}h1,h2,h3,h4,h5{font-weight:400;color:#5c5146;letter-spacing:-1px}h2{border-bottom:1px solid #e6e6e6;line-height:1.7em}h6{color:#777}hr{border:1px solid #e6e6e6}p{line-height:19px}p>code{font-family:"Open Sans",AppleSDGothicNeo-Medium,"Segoe UI","Malgun Gothic",sans-serif;color:#e86741;font-size:.9em}pre>code{font-size:1em;font-family:"Open Sans",AppleSDGothicNeo-Medium,"Segoe UI","Malgun Gothic",sans-serif;letter-spacing:-1px;font-weight:400}blockquote{border-left:4px solid #e6e6e6;padding:0 15px;font-style:italic;color:#e86741}table{background-color:#fafafa}table tr td,table tr th{border:1px solid #e6e6e6}table tr:nth-child(2n){background-color:#f2f2f2}
+  </style>
+ </head>
+ <body>
+  <h1 id="academia-web-python">
+   academia-web-python
+  </h1>
+  <h2 id="instalacion-de-librerias-en-el-sistemas-operativo">
+   Instalación de librerías en el sistemas operativo
+  </h2>
+  <pre><code>sudo apt-get update
+
+sudo apt-get install python-dev
+
+sudo apt-get install python-setuptools
+
+sudo apt-get install postgresql
+
+sudo apt-get install postgresql-server-dev-9.3
+</code></pre>
+  <h2 id="instalacion-de-librerias-de-python-en-todo-el-so">
+   Instalación de librerías de python en todo el SO
+  </h2>
+  <pre><code>sudo easy_install pip
+
+sudo pip install virtualenv
+</code></pre>
+  <h2 id="creacion-de-entornos-virtuales">
+   Creación de entornos virtuales
+  </h2>
+  <pre><code>virtualenv /ruta/nombre_entorno
+
+source /ruta/nombre_entorno/bin/activate
+
+deactivate
+</code></pre>
+  <h2 id="instalacion-de-librerias-en-un-entornos-virtualenv">
+   Instalación de librerías en un entornos (virtualenv)
+  </h2>
+  <pre><code>pip install psycopg2
+
+pip install django==1.8
+
+pip install ipython
+</code></pre>
+  <h2 id="creacion-de-un-proyecto-en-django">
+   Creación de un proyecto en Django
+  </h2>
+  <pre><code>1. django-admin.py startproject miproyecto  
+2. configurar toda la base ....
+3. python manage.py migrate
+4. python manage.py startapp colegio
+5. crear el modelado de la nueva aplicación
+6. agregar la app en el settings.py
+
+7. python manage.py makemigrations colegio
+8. python manage.py migrate
+
+9. python manage.py shell (se puede hacer ya las pruebas en el shell)
+10. python manage.py createsuperuser  
+11. python manage.py runserver   (en el navegador http://127.0.0.1:8000/admin)
+12. agregar las clases en el admin
+13. python manage.py runserver
+</code></pre>
+  <h2 id="comandos-adicionales-uso-de-django">
+   Comandos adicionales uso de django
+  </h2>
+  <pre><code>Change your models (in models.py).
+
+Run python manage.py makemigrations to create migrations for those changes
+
+Run python manage.py migrate to apply those changes to the database.
+
+django-admin startproject proyecto1
+
+python manage.py startapp aplicacion1
+
+python manage.py sqlmigrate aplicacion1 0001  #solo muestra el sql
+</code></pre>
+  <h2 id="uso-de-comando-postsgres">
+   Uso de comando postsgres
+  </h2>
+  <pre><code>1. sudo -i -u postgres
+2. psql
+3. create database base_miproyecto with owner=duenio;
+4. \q
+5. exit
+6. psql -h localhost -U duenio base_miproyecto;
+</code></pre>
+  <h2 id="uso-del-comando-inspectdb">
+   Uso del comando inspectdb
+  </h2>
+  <pre><code>python manage.py inspectdb
+python manage.py  migrate
+</code></pre>
+  <h2 id="uso-del-comando-inspectdb-en-un-proyecto">
+   Uso del comando inspectdb en un proyecto
+  </h2>
+  <pre><code>django-admin startproject escuela
+
+cd escuela/
+
+ls
+
+python manage.py startapp estudiantes
+
+ls
+
+python inspectdb &gt; models.py
+
+ls
+
+python manage.py inspectdb &gt; models.py
+
+ls
+
+python manage.py migrate
+
+python manage.py makemigrations estudiantes
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py  runserver
+</code></pre>
+  <h2 id="importar-y-exportar-en-postgres">
+   Importar y exportar en postgres
+  </h2>
+  <pre><code>pg_dump -U reroes -W -h localhost base_clase2 &gt; basename.sql
+
+psql -U reroes -W -h localhost base_clase2 &lt; basename.sql   # import
+</code></pre>
+  <h2 id="comandos-git">
+   Comandos GIT
+  </h2>
+  <pre><code>git clone
+
+git add
+
+git commit -a -m"mensaje"
+
+git push
+
+git pull
+
+git branch -a # listo los brachs de mi repositorio
+
+git chekcout nombre-branch
+</code></pre>
+  <h3 id="aqui-se-puede-agregar-mas-archivo-o-modificar-archivos">
+   aqui se puede agregar más archivo o modificar archivos
+  </h3>
+  <pre><code>git push -u origin nombre-branch # la primera vez olvida
+</code></pre>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>
